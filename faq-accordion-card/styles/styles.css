@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  color: #787887;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  background-image: linear-gradient(#af67e9, #6565e7);
+}
+
+.accordion-wrapper {
+  background-color: #fff;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+.accordion-wrapper .accordion-img {
+  background-image: url("./../images/illustration-woman-online-desktop.svg"), url("./../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, 200%;
+  background-position: -65px center, -465px center;
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+.accordion-wrapper .accordion-img__woman {
+  display: none;
+}
+.accordion-wrapper .accordion-img__box {
+  margin-left: -73px;
+  margin-top: 80px;
+  width: 150px;
+}
+.accordion-wrapper .accordion {
+  padding: 5rem 2.5rem;
+  width: 350px;
+  max-width: 350px;
+}
+.accordion-wrapper .accordion h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #1d1e35;
+}
+.accordion-wrapper .accordion__item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e7e7e9;
+}
+.accordion-wrapper .accordion__item-header {
+  list-style: none;
+  color: #4a4b5e;
+  font-weight: 400;
+}
+.accordion-wrapper .accordion__item-header::after {
+  content: url("./../images/icon-arrow-down.svg");
+  float: right;
+  margin-left: 1rem;
+}
+.accordion-wrapper .accordion__item-header:hover {
+  color: #f47c57;
+  cursor: pointer;
+}
+.accordion-wrapper .accordion__item-header:focus {
+  outline: none;
+}
+.accordion-wrapper .accordion__item p {
+  padding-top: 1rem;
+}
+.accordion-wrapper .accordion__item[open] .accordion__item-header {
+  font-weight: 700;
+  color: #1d1e35;
+}
+.accordion-wrapper .accordion__item[open] .accordion__item-header::after {
+  transform: rotate(180deg);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1.5rem;
+  color: #000;
+}
+.attribution a {
+  font-size: 11px;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .accordion-wrapper {
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 300px;
+    margin-top: 120px;
+  }
+  .accordion-wrapper .accordion-img {
+    background-image: url("./../images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding-bottom: 10px;
+  }
+  .accordion-wrapper .accordion-img__woman {
+    margin-top: -105px;
+    display: block;
+  }
+  .accordion-wrapper .accordion-img__box {
+    display: none;
+  }
+  .accordion-wrapper .accordion {
+    padding: 2.5rem 1.75rem;
+    width: auto;
+  }
+  .accordion-wrapper .accordion h3 {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
