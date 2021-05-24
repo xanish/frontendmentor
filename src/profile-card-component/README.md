@@ -4,13 +4,15 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+- [Frontend Mentor - Profile card component solution](#frontend-mentor---profile-card-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+  - [Author](#author)
 
 ## Overview
 
@@ -24,8 +26,8 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/profile-card-component)
-- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/profile-card-component/)
+- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/src/profile-card-component)
+- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/src/profile-card-component/)
 
 ## My process
 

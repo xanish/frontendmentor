@@ -13,6 +13,7 @@ This is a solution to the [3-column preview card component challenge on Frontend
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
+  - [Author](#author)
 
 ## Overview
 
@@ -29,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/3-column-preview-card-component)
-- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/3-column-preview-card-component/)
+- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/src/3-column-preview-card-component)
+- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/src3-column-preview-card-component/)
 
 ## My process
 

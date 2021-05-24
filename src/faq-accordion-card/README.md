@@ -4,14 +4,16 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
+- [Frontend Mentor - FAQ accordion card solution](#frontend-mentor---faq-accordion-card-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+  - [Author](#author)
 
 ## Overview
 
@@ -31,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/faq-accordion-card)
-- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/faq-accordion-card/)
+- Solution URL: [GitHub](https://github.com/xanish/frontendmentorio/tree/main/src/faq-accordion-card)
+- Live Site URL: [Demo](https://xanish.github.io/frontendmentorio/src/faq-accordion-card/)
 
 ## My process
 
