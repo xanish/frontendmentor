@@ -1,0 +1,109 @@
+$colors: (
+  'dark-cyan': hsl(185, 75%, 39%),
+  'very-dark-desaturated-blue': hsl(229, 23%, 23%),
+  'dark-grayish-blue': hsl(227, 10%, 46%),
+  'dark-gray': hsl(0, 0%, 59%),
+  'light-gray': hsl(0, 0%, 80%),
+  'white': #fff,
+  'black': #000,
+  'shadow': rgba(0, 0, 0, 0.25),
+);
+
+* {
+  box-sizing: border-box;
+  font-size: 18px;
+  margin: 0;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: map-get($colors, 'dark-cyan');
+  color: map-get($colors, 'dark-grayish-blue');
+
+  background-image: url('./../images/bg-pattern-top.svg'), url('./../images/bg-pattern-bottom.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 40vh, left 50vw top 40vh;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  background-color: map-get($colors, 'white');
+  flex: 1 1 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 5px 0px 20px map-get($colors, 'shadow');
+
+  &__banner {
+    height: 6rem;
+    background: url('./../images/bg-pattern-card.svg');
+  }
+
+  &__bio {
+    text-align: center;
+    padding-bottom: 1.5rem;
+
+    img {
+      border-radius: 100%;
+      border: 0.3rem solid map-get($colors, 'white');
+      margin-top: -3rem;
+    }
+
+    h3 {
+      margin-top: 0.5rem;
+    }
+
+    &--secondary {
+      color: map-get($colors, 'dark-gray');
+      font-weight: 400;
+    }
+  }
+
+  p {
+    color: map-get($colors, 'dark-gray');
+    margin-top: 0.5rem;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+    border-top: 1px solid map-get($colors, 'light-gray');
+
+    p {
+      font-size: 0.75rem;
+    }
+
+    section {
+      text-align: center;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1.5rem;
+  color: map-get($colors, 'black');
+
+  a {
+    font-size: 11px;
+    color: map-get($colors, 'white');
+  }
+}
