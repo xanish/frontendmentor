@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-image: url("../images/bg-desktop.svg");
+  background-color: #674baf;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  padding: 4rem;
+}
+header .logo {
+  width: 250px;
+  height: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 2rem 4rem;
+}
+main .mockup {
+  background-image: url("../images/illustration-mockups.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  width: 60%;
+}
+main .content {
+  width: 40%;
+  margin: 2rem;
+}
+main .content__header {
+  font-size: 3rem;
+}
+main .content__body {
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+main .content__register {
+  color: #674baf;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: #fff;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.4rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+main .content__register:hover {
+  color: #fff;
+  background-color: #e882e8;
+}
+
+footer {
+  padding: 1rem 4rem;
+}
+footer .socials {
+  text-align: end;
+}
+footer .socials a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  background-color: transparent;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+footer .socials a:not(:last-child) {
+  margin-right: 1rem;
+}
+footer .socials a:hover {
+  color: #e882e8;
+  border: 1px solid #e882e8;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 1280px) {
+  main .content__header {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .container {
+    background-image: url("../images/bg-mobile.svg");
+  }
+
+  header {
+    padding: 2rem 1rem;
+  }
+  header .logo {
+    width: 150px;
+    height: auto;
+  }
+
+  main {
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1rem;
+  }
+  main .mockup {
+    height: 300px;
+    width: auto;
+    flex-grow: 1;
+  }
+  main .content {
+    width: auto;
+    text-align: center;
+    margin: 1rem;
+  }
+  main .content__header {
+    font-size: 1.3rem;
+  }
+  main .content__body {
+    font-size: 1rem;
+    margin: 2rem 0;
+  }
+  main .content__register {
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+  footer .socials {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  footer .socials a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  footer .socials a:hover {
+    color: #e882e8;
+    border: 1px solid #e882e8;
+  }
+  footer .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  footer .attribution a {
+    font-size: 11px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
