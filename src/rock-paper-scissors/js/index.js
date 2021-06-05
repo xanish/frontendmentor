@@ -114,7 +114,7 @@ function updateScore(increment) {
 
     try {
         const currentScore = localStorage.getItem('score') == null ? 0 : localStorage.getItem('score');
-        score = currentScore + increment;
+        score = +currentScore + increment;
         localStorage.setItem('score', score);
     } catch (e) {
         game.score += increment;
@@ -133,5 +133,5 @@ function getScore() {
         score = game.score;
     }
 
-    return score;
+    return +score;
 }
