@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/styles.css">
+
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <img src="images/logo-bonus.svg" class="logo" alt="rock paper scissors lizard spock">
+
+      <article class="score">
+        <h6 class="score__title">score</h6>
+        <p class="score__value">0</p>
+      </article>
+    </header>
+
+    <main>
+      <div class="game-wrapper">
+        <div class="game-wrapper__row">
+          <button class="game-wrapper__btn" data-choice="scissors" aria-label="Scissors"></button>
+        </div>
+        <div class="game-wrapper__row">
+          <button class="game-wrapper__btn" data-choice="spock" aria-label="Spock"></button>
+          <button class="game-wrapper__btn" data-choice="paper" aria-label="Paper"></button>
+        </div>
+        <div class="game-wrapper__row">
+          <button class="game-wrapper__btn" data-choice="lizard" aria-label="Lizard"></button>
+          <button class="game-wrapper__btn" data-choice="rock" aria-label="Rock"></button>
+        </div>
+      </div>
+
+      <div class="results hidden">
+        <div class="results__user-choice">
+          <h2 class="results__header">You Picked</h2>
+          <div class="results__choice">
+            <div class="results__choice-placeholder"></div>
+            <div class="results__choice-ripples hidden">
+              <div class="ripple"></div>
+              <div class="ripple"></div>
+              <div class="ripple"></div>
+            </div>
+            <div class="results__choice-btn hidden"></div>
+          </div>
+        </div>
+        <div class="results__play-again hidden">
+          <h1 class="results__header"></h1>
+          <button id="play-again" class="hidden">Play Again</button>
+        </div>
+        <div class="results__comp-choice">
+          <h2 class="results__header">The House Picked</h2>
+          <div class="results__choice">
+            <div class="results__choice-placeholder"></div>
+            <div class="results__choice-ripples hidden">
+              <div class="ripple"></div>
+              <div class="ripple"></div>
+              <div class="ripple"></div>
+            </div>
+            <div class="results__choice-btn hidden"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="rules">
+        <button id="rules">rules</button>
+      </div>
+
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="noopener noreferrer" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/xanish">xanish</a>.
+      </p>
+    </footer>
+
+  </div>
+
+  <div class="modal hidden">
+    <div class="modal__dialog">
+      <div class="modal__header">
+        <h2>RULES</h2>
+        <span class="modal__close" role="button" aria-label="close rules"><img src="images/icon-close.svg" alt="close"></span>
+      </div>
+      <div class="modal__body">
+        <img src="images/image-rules-bonus.svg" alt="">
+      </div>
+      <div class="modal__footer">
+        <span class="modal__close" role="button" aria-label="close rules"><img src="images/icon-close.svg" alt="close"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

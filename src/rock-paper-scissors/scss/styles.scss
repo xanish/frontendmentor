@@ -1,0 +1,652 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background: $background no-repeat;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+    header {
+        margin: 1rem;
+        padding: 1rem;
+        border: 4px solid $text-header-outline;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(100% - 2rem);
+
+        .logo {
+            height: 4rem;
+        }
+
+        .score {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 5px 20px;
+            text-align: center;
+
+            &__title {
+                color: $text-score;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.75rem;
+            }
+
+            &__value {
+                color: $text-dark;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .game-wrapper {
+            background: url('../images/bg-pentagon.svg') no-repeat center;
+            background-size: 80%;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            animation: fade-in 0.7s linear, rotate 0.4s linear;
+
+            &.hidden {
+                display: none;
+            }
+
+            &__row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+                &:nth-child(2) {
+                    justify-content: space-between;
+                    padding-top: 10px;
+                }
+
+                &:nth-child(3) {
+                    padding-top: 30px;
+                }
+            }
+
+            &__btn {
+                @include choice-btn(85px, 85px);
+
+                &[data-choice="scissors"] {
+                    @include choice-btn-style(8px, 4px, "scissors");
+                }
+
+                &[data-choice="spock"] {
+                    @include choice-btn-style(8px, 4px, "spock");
+                }
+
+                &[data-choice="paper"] {
+                    @include choice-btn-style(8px, 4px, "paper");
+                }
+
+                &[data-choice="lizard"] {
+                    @include choice-btn-style(8px, 4px, "lizard");
+                }
+
+                &[data-choice="rock"] {
+                    @include choice-btn-style(8px, 4px, "rock");
+                }
+            }
+        }
+
+        .results {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 2fr 1fr;
+            text-align: center;
+
+            &.hidden {
+                display: none;
+            }
+
+            &__user-choice {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            &__comp-choice {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            &__header {
+                color: white;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+            }
+
+            &__choice {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &-placeholder {
+                    width: 150px;
+                    height: 150px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 100%;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+                
+                &-ripples {
+                    width: 150px;
+                    height: 150px;
+                    position: absolute;
+
+                    &.hidden {
+                        display: none;
+                    }
+
+                    .ripple {
+                        position: absolute;
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 100%;
+                        background-color: rgba(255, 255, 255, 0.2);
+                        transform: scale(1);
+                        animation: ripple-small 3s linear infinite;
+                        z-index: -10;
+
+                        &:nth-child(2) {
+                            animation-delay: 1s;
+                        }
+
+                        &:nth-child(3) {
+                            animation-delay: 2s;
+                        }
+                    }
+                }
+
+                &-btn {
+                    @include choice-btn(150px, 150px);
+
+                    &[data-choice="scissors"] {
+                        @include choice-btn-style(20px, 6px, "scissors");
+                    }
+
+                    &[data-choice="spock"] {
+                        @include choice-btn-style(20px, 6px, "spock");
+                    }
+
+                    &[data-choice="paper"] {
+                        @include choice-btn-style(20px, 6px, "paper");
+                    }
+
+                    &[data-choice="lizard"] {
+                        @include choice-btn-style(20px, 6px, "lizard");
+                    }
+
+                    &[data-choice="rock"] {
+                        @include choice-btn-style(20px, 6px, "rock");
+                    }
+
+                    &:not(data-choice) {
+                        @include choice-btn-style(0px, 0px, "");
+                    }
+
+                    animation: scale-in 0.3s linear;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+
+            &__play-again {
+                grid-column: 1 / span 2;
+                grid-row: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                &.hidden {
+                    display: none;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                    margin: 1rem;
+                }
+
+                button {
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 0.5rem;
+                    color: $text-dark;
+                    text-transform: uppercase;
+                    padding: 0.75rem 2rem;
+                    font-size: 1rem;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        margin: 1rem;
+        text-align: center;
+        width: calc(100% - 3rem);
+
+        button {
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            color: white;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: white;
+                color: $text-dark;
+                transition: 0.3s;
+            }
+        }
+
+        .attribution {
+            margin-top: 1rem;
+            color: white;
+            font-size: 11px;
+
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    &.hidden {
+        display: none;
+    }
+
+    &__dialog {
+        background-color: white;
+        color: $text-dark;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        animation: scale-in 0.2s linear;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    &__body {
+        padding: 30px 0;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        header {
+            margin: 1.5rem;
+            padding: 1.5rem;
+            width: 600px;
+    
+            .logo {
+                height: auto;
+            }
+    
+            .score {
+                padding: 1rem 2rem;
+    
+                &__title {
+                    font-size: 1.15rem;
+                }
+    
+                &__value {
+                    font-size: 3rem;
+                }
+            }
+        }
+    
+        main {
+            .game-wrapper {
+                background-size: 70%;
+                width: 500px;
+                height: 500px;
+    
+                &__row {
+                    &:nth-child(1) {
+                        padding-top: 20px;
+                    }
+    
+                    &:nth-child(3) {
+                        padding-top: 40px;
+                    }
+                }
+    
+                &__btn {
+                    @include choice-btn(125px, 125px);
+
+                    &[data-choice="scissors"] {
+                        @include choice-btn-style(15px, 6px, "scissors");
+                    }
+
+                    &[data-choice="spock"] {
+                        @include choice-btn-style(15px, 6px, "spock");
+                    }
+
+                    &[data-choice="paper"] {
+                        @include choice-btn-style(15px, 6px, "paper");
+                    }
+
+                    &[data-choice="lizard"] {
+                        @include choice-btn-style(15px, 6px, "lizard");
+                    }
+
+                    &[data-choice="rock"] {
+                        @include choice-btn-style(15px, 6px, "rock");
+                    }
+                }
+            }
+
+            .results {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr;
+
+                &__user-choice, &__comp-choice {
+                    justify-self: center;
+                    align-self: center;
+                }
+
+                &__comp-choice {
+                    grid-column: 3;
+                    grid-row: 1;
+                }
+    
+                &__choice {
+                    &-placeholder {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    &-ripples {
+                        width: 200px;
+                        height: 200px;
+
+                        .ripple {
+                            width: 200px;
+                            height: 200px;
+                            animation: ripple-large 3s linear infinite;
+                        }
+                    }
+
+                    &-btn {
+                        @include choice-btn(200px, 200px);
+
+                        &[data-choice="scissors"] {
+                            @include choice-btn-style(20px, 8px, "scissors");
+                        }
+
+                        &[data-choice="spock"] {
+                            @include choice-btn-style(20px, 8px, "spock");
+                        }
+
+                        &[data-choice="paper"] {
+                            @include choice-btn-style(20px, 8px, "paper");
+                        }
+
+                        &[data-choice="lizard"] {
+                            @include choice-btn-style(20px, 8px, "lizard");
+                        }
+
+                        &[data-choice="rock"] {
+                            @include choice-btn-style(20px, 8px, "rock");
+                        }
+
+                        &:not(data-choice) {
+                            @include choice-btn-style(0px, 0px, "");
+                        }
+                    }
+                }
+
+                &__play-again {
+                    grid-column: 2;
+                    grid-row: 1;
+
+                    h1 {
+                        font-size: 3.5rem;
+                    }
+
+                    button {
+                        padding: 1rem 3rem;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    
+        footer {
+            margin: 1.5rem;
+
+            .rules {
+                text-align: right;
+
+                button {
+                    font-size: 1.15rem;
+                    padding: 0.75rem 2rem;
+                }
+            }
+        }
+    }
+
+    .modal {
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.hidden {
+            display: none;
+        }
+
+        &__dialog {
+            width: 400px;
+            height: fit-content;
+            align-items: normal;
+        }
+
+        &__header {
+            span {
+                display: inline-block;
+            }
+        }
+
+        &__footer {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        main {
+            .game-wrapper {
+                width: 500px;
+                height: 500px;
+    
+                &__row {
+                    &:nth-child(1), &:nth-child(2) {
+                        padding-top: 0;
+                    }
+    
+                    &:nth-child(3) {
+                        padding-top: 40px;
+                    }
+                }
+    
+                &__btn {
+                    @include choice-btn(150px, 150px);
+
+                    &[data-choice="scissors"] {
+                        @include choice-btn-style(20px, 7px, "scissors");
+                    }
+
+                    &[data-choice="spock"] {
+                        @include choice-btn-style(20px, 7px, "spock");
+                    }
+
+                    &[data-choice="paper"] {
+                        @include choice-btn-style(20px, 7px, "paper");
+                    }
+
+                    &[data-choice="lizard"] {
+                        @include choice-btn-style(20px, 7px, "lizard");
+                    }
+
+                    &[data-choice="rock"] {
+                        @include choice-btn-style(20px, 7px, "rock");
+                    }
+                }
+            }
+
+            .results {
+                &__choice {
+                    &-placeholder {
+                        width: 300px;
+                        height: 300px;
+                    }
+
+                    &-ripples {
+                        width: 300px;
+                        height: 300px;
+
+                        .ripple {
+                            width: 300px;
+                            height: 300px;
+                        }
+                    }
+
+                    &-btn {
+                        @include choice-btn(300px, 300px);
+
+                        &[data-choice="scissors"] {
+                            @include choice-btn-style(30px, 10px, "scissors");
+                        }
+
+                        &[data-choice="spock"] {
+                            @include choice-btn-style(30px, 10px, "spock");
+                        }
+
+                        &[data-choice="paper"] {
+                            @include choice-btn-style(30px, 10px, "paper");
+                        }
+
+                        &[data-choice="lizard"] {
+                            @include choice-btn-style(30px, 10px, "lizard");
+                        }
+
+                        &[data-choice="rock"] {
+                            @include choice-btn-style(30px, 10px, "rock");
+                        }
+
+                        &:not(data-choice) {
+                            @include choice-btn-style(0px, 0px, "");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes ripple-large {
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+@keyframes ripple-small {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

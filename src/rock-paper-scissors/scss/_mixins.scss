@@ -1,0 +1,45 @@
+@mixin choice-btn($width, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 100%;
+    background-color: white;
+    filter: brightness(90%);
+
+    &:hover {
+        filter: brightness(110%);
+        transition: 0.3s;
+    }
+}
+
+@mixin choice-btn-style($border, $shadow, $choice) {
+    @if ($choice != '') {
+        background: url('../images/icon-#{$choice}.svg') no-repeat center, white;
+    }
+    
+    @if ($choice == 'scissors') {
+        border: $border solid $scissors-primary;
+        box-shadow: inset 0px $shadow $btn-shadow, 0px $shadow $scissors-dark;
+    }
+
+    @if ($choice == 'spock') {
+        border: $border solid $spock-primary;
+        box-shadow: inset 0px $shadow $btn-shadow, 0px $shadow $spock-dark;
+    }
+
+    @if ($choice == 'paper') {
+        border: $border solid $paper-primary;
+        box-shadow: inset 0px $shadow $btn-shadow, 0px $shadow $paper-dark;
+    }
+
+    @if ($choice == 'lizard') {
+        border: $border solid $lizard-primary;
+        box-shadow: inset 0px $shadow $btn-shadow, 0px $shadow $lizard-dark;
+    }
+
+    @if ($choice == 'rock') {
+        border: $border solid $rock-primary;
+        box-shadow: inset 0px $shadow $btn-shadow, 0px $shadow $rock-dark;
+    }
+
+    background-size: 50%;
+}
