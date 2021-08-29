@@ -1,0 +1,250 @@
+@import 'themes';
+@import 'mixins';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 34px;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .calculator {
+        width: 500px;
+        max-width: 500px;
+        display: grid;
+        flex-shrink: 1;
+        
+        &-header {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__title {
+                font-size: 38px;
+            }
+
+            &__toggle {
+
+                .theme-toggler {
+                    display: grid;
+                    grid-template-columns: 80px 60px;
+                    grid-template-rows: 1fr 1fr;
+                    align-items: center;
+                    justify-items: center;
+
+                    &__header {
+                        grid-row: 2;
+
+                        h6 {
+                            font-size: 12px;
+                            text-transform: uppercase;
+                        }
+                        
+                    }
+
+                    &__labels {
+                        grid-row: 1;
+                        grid-column: 2;
+
+                        ul {
+                            list-style-type: none;
+                            line-height: 20px;
+
+                            li {
+                                display: inline;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    &__buttons {
+                        background-color: var(--numpad-bg);
+                        width: 100%;
+                        height: 20px;
+                        border-radius: 20px;
+                        position: relative;
+                        display: flex;
+                        grid-row: 2;
+                        grid-column: 2;
+
+                        .slider {
+                            position: absolute;
+                            width: 14px;
+                            height: 14px;
+                            margin: 3px;
+                            background-color: var(--toggle-btn-bg);
+                            border-radius: 100%;
+                            z-index: 2;
+                            transition: 0.5s ease-in-out;
+
+                            &--theme-1 {
+                                left: 0px;
+                            }
+
+                            &--theme-2 {
+                                left: 20px;
+                            }
+
+                            &--theme-3 {
+                                left: 40px;
+                            }
+                        }
+
+                        label {
+                            width: 20px;
+                            height: 20px;
+                            display: inline;
+                            cursor: pointer;
+                            z-index: 10;
+                        }
+
+                        input[type="radio"] {
+                            visibility: hidden;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &-screen {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--screen-bg);
+            color: var(--screen-text);
+            border-radius: 0.3rem;
+            text-align: right;
+        }
+
+        &-keypad {
+            background-color: var(--numpad-bg);
+            border-radius: 0.3rem;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-gap: 18px;
+
+            &__key {
+                @include calculator-btn(var(--numpad-key-primary-bg), var(--numpad-key-primary-shadow), var(--numpad-key-primary-text));
+
+                &--del {
+                    @include calculator-btn(var(--numpad-key-secondary-bg), var(--numpad-key-secondary-shadow), var(--numpad-key-secondary-text));
+                    font-size: 20px;
+                }
+
+                &--equals {
+                    @include calculator-btn(var(--numpad-key-tertiary-bg), var(--numpad-key-tertiary-shadow), var(--numpad-key-tertiary-text));
+                    grid-column: 3 / span 2;
+                }
+
+                &--reset {
+                    @include calculator-btn(var(--numpad-key-secondary-bg), var(--numpad-key-secondary-shadow), var(--numpad-key-secondary-text));
+                    font-size: 20px;
+                    grid-column: 1 / span 2;
+                }
+            }
+        }
+    }
+
+    footer {
+        margin: 1rem;
+        font-size: 11px;
+        
+        .attribution {
+            font-size: inherit;
+            text-align: center;
+
+            a {
+                font-size: inherit;
+                color: var(--footer-link-text);
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    * {
+        font-size: 32px;
+    }
+
+    .container {    
+        .calculator {
+            width: 380px;
+            display: grid;
+
+            &-header {
+                &__title {
+                    font-size: 32px;
+                }
+            }
+
+            &-keypad {
+                &__key {
+                    &--del {
+                        font-size: 18px;
+                    }
+    
+                    &--reset {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    * {
+        font-size: 24px;
+    }
+
+    .container {    
+        .calculator {
+            width: 300px;
+            display: grid;
+
+            &-header {
+                &__title {
+                    font-size: 28px;
+                }
+            }
+
+            &-keypad {
+                grid-gap: 14px;
+
+                &__key {
+                    &--del {
+                        font-size: 14px;
+                    }
+    
+                    &--reset {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        footer {
+            margin: 1rem;
+            font-size: 10px;
+        }
+    }
+}

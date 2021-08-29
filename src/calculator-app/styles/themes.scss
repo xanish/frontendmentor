@@ -1,0 +1,82 @@
+@import 'colors';
+
+.theme-1 {
+    --main-bg: #{map-get($theme-1, 'main-bg')};
+    --main-text: #{map-get($theme-1, 'main-text')};
+
+    --toggle-bg: #{map-get($theme-1, 'toggle-bg')};
+    --toggle-btn-bg: #{map-get($theme-1, 'toggle-btn-bg')};
+
+    --screen-bg: #{map-get($theme-1, 'screen-bg')};
+    --screen-text: #{map-get($theme-1, 'screen-text')};
+
+    --numpad-bg: #{map-get($theme-1, 'numpad-bg')};
+    
+    --numpad-key-primary-bg: #{map-get($theme-1, 'numpad-key-primary-bg')};
+    --numpad-key-primary-shadow: #{map-get($theme-1, 'numpad-key-primary-shadow')};
+    --numpad-key-primary-text: #{map-get($theme-1, 'numpad-key-primary-text')};
+
+    --numpad-key-secondary-bg: #{map-get($theme-1, 'numpad-key-secondary-bg')};
+    --numpad-key-secondary-shadow: #{map-get($theme-1, 'numpad-key-secondary-shadow')};
+    --numpad-key-secondary-text: #{map-get($theme-1, 'numpad-key-secondary-text')};
+    
+    --numpad-key-tertiary-bg: #{map-get($theme-1, 'numpad-key-tertiary-bg')};
+    --numpad-key-tertiary-shadow: #{map-get($theme-1, 'numpad-key-tertiary-shadow')};
+    --numpad-key-tertiary-text: #{map-get($theme-1, 'numpad-key-tertiary-text')};
+
+    --footer-link-text: #{map-get($theme-1, 'footer-link-text')};
+}
+
+.theme-2 {
+    --main-bg: #{map-get($theme-2, 'main-bg')};
+    --main-text: #{map-get($theme-2, 'main-text')};
+
+    --toggle-bg: #{map-get($theme-2, 'toggle-bg')};
+    --toggle-btn-bg: #{map-get($theme-2, 'toggle-btn-bg')};
+
+    --screen-bg: #{map-get($theme-2, 'screen-bg')};
+    --screen-text: #{map-get($theme-2, 'screen-text')};
+
+    --numpad-bg: #{map-get($theme-2, 'numpad-bg')};
+    
+    --numpad-key-primary-bg: #{map-get($theme-2, 'numpad-key-primary-bg')};
+    --numpad-key-primary-shadow: #{map-get($theme-2, 'numpad-key-primary-shadow')};
+    --numpad-key-primary-text: #{map-get($theme-2, 'numpad-key-primary-text')};
+
+    --numpad-key-secondary-bg: #{map-get($theme-2, 'numpad-key-secondary-bg')};
+    --numpad-key-secondary-shadow: #{map-get($theme-2, 'numpad-key-secondary-shadow')};
+    --numpad-key-secondary-text: #{map-get($theme-2, 'numpad-key-secondary-text')};
+    
+    --numpad-key-tertiary-bg: #{map-get($theme-2, 'numpad-key-tertiary-bg')};
+    --numpad-key-tertiary-shadow: #{map-get($theme-2, 'numpad-key-tertiary-shadow')};
+    --numpad-key-tertiary-text: #{map-get($theme-2, 'numpad-key-tertiary-text')};
+
+    --footer-link-text: #{map-get($theme-2, 'footer-link-text')};
+}
+
+.theme-3 {
+    --main-bg: #{map-get($theme-3, 'main-bg')};
+    --main-text: #{map-get($theme-3, 'main-text')};
+
+    --toggle-bg: #{map-get($theme-3, 'toggle-bg')};
+    --toggle-btn-bg: #{map-get($theme-3, 'toggle-btn-bg')};
+
+    --screen-bg: #{map-get($theme-3, 'screen-bg')};
+    --screen-text: #{map-get($theme-3, 'screen-text')};
+
+    --numpad-bg: #{map-get($theme-3, 'numpad-bg')};
+    
+    --numpad-key-primary-bg: #{map-get($theme-3, 'numpad-key-primary-bg')};
+    --numpad-key-primary-shadow: #{map-get($theme-3, 'numpad-key-primary-shadow')};
+    --numpad-key-primary-text: #{map-get($theme-3, 'numpad-key-primary-text')};
+
+    --numpad-key-secondary-bg: #{map-get($theme-3, 'numpad-key-secondary-bg')};
+    --numpad-key-secondary-shadow: #{map-get($theme-3, 'numpad-key-secondary-shadow')};
+    --numpad-key-secondary-text: #{map-get($theme-3, 'numpad-key-secondary-text')};
+    
+    --numpad-key-tertiary-bg: #{map-get($theme-3, 'numpad-key-tertiary-bg')};
+    --numpad-key-tertiary-shadow: #{map-get($theme-3, 'numpad-key-tertiary-shadow')};
+    --numpad-key-tertiary-text: #{map-get($theme-3, 'numpad-key-tertiary-text')};
+
+    --footer-link-text: #{map-get($theme-3, 'footer-link-text')};
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="theme-1">
+
+  <div class="container">
+
+    <main class="calculator">
+
+      <div class="calculator-header">
+        <h3 class="calculator-header__title">calc</h3>
+        <div class="calculator-header__toggle">
+          <div class="theme-toggler">
+            <div class="theme-toggler__header">
+              <h6>Theme</h6>
+            </div>
+            <div class="theme-toggler__labels">
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
+            <div class="theme-toggler__buttons">
+              <label for="theme-1"><input type="radio" name="theme" id="theme-1" value="1" checked></label>
+              <label for="theme-2"><input type="radio" name="theme" id="theme-2" value="2"></label>
+              <label for="theme-3"><input type="radio" name="theme" id="theme-3" value="3"></label>
+              <span class="slider slider--theme-1" id="toggle-slider"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator-screen">0</div>
+
+      <div class="calculator-keypad">
+        <button class="calculator-keypad__key" data-number="7">7</button>
+        <button class="calculator-keypad__key" data-number="8">8</button>
+        <button class="calculator-keypad__key" data-number="9">9</button>
+        <button class="calculator-keypad__key--del" data-operator="delete">DEL</button>
+
+        <button class="calculator-keypad__key" data-number="4">4</button>
+        <button class="calculator-keypad__key" data-number="5">5</button>
+        <button class="calculator-keypad__key" data-number="6">6</button>
+        <button class="calculator-keypad__key" data-operator="add">+</button>
+
+        <button class="calculator-keypad__key" data-number="1">1</button>
+        <button class="calculator-keypad__key" data-number="2">2</button>
+        <button class="calculator-keypad__key" data-number="3">3</button>
+        <button class="calculator-keypad__key" data-operator="subtract">-</button>
+
+        <button class="calculator-keypad__key" data-number=".">.</button>
+        <button class="calculator-keypad__key" data-number="0">0</button>
+        <button class="calculator-keypad__key" data-operator="divide">/</button>
+        <button class="calculator-keypad__key" data-operator="multiply">x</button>
+
+        <button class="calculator-keypad__key--reset" data-operator="reset">RESET</button>
+        <button class="calculator-keypad__key--equals" data-operator="equals">=</button>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">xanish</a>.
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>

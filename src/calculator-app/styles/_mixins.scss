@@ -1,0 +1,21 @@
+@mixin calculator-btn($bg-color, $shadow-color, $text-color) {
+    position: relative;
+    cursor: pointer;
+    color: $text-color;
+    background-color: $bg-color;
+    box-shadow: 0 5px $shadow-color;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0;
+    font-weight: 700;
+
+    &:hover {
+        top: 2px;
+        box-shadow: 0px 2px $shadow-color;
+    }
+
+    &:active {
+        top: 4px;
+        box-shadow: none;
+    }
+}
