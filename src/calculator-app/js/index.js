@@ -15,6 +15,9 @@ class Calculator {
         if (number === '.' && this.register.toString().includes('.')) {
             return;
         }
+        if (this.register.length === 15) {
+            return;
+        }
         this.register = this.register === '0' ? (number === '.' ? '0.' : number) : this.register + number;
         this.display(this.register);
     }

@@ -131,6 +131,7 @@ body {
             color: var(--screen-text);
             border-radius: 0.3rem;
             text-align: right;
+            max-width: 500px;
         }
 
         &-keypad {
@@ -180,9 +181,44 @@ body {
     }
 }
 
+@media (max-width: 1366px) {
+    * {
+        font-size: 30px;
+    }
+
+    .container {    
+        .calculator {
+            width: 400px;
+            display: grid;
+
+            &-header {
+                &__title {
+                    font-size: 32px;
+                }
+            }
+
+            &-screen {
+                max-width: 400px;
+            }
+
+            &-keypad {
+                &__key {
+                    &--del {
+                        font-size: 16px;
+                    }
+    
+                    &--reset {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 500px) {
     * {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .container {    
@@ -192,18 +228,22 @@ body {
 
             &-header {
                 &__title {
-                    font-size: 32px;
+                    font-size: 28px;
                 }
+            }
+
+            &-screen {
+                max-width: 380px;
             }
 
             &-keypad {
                 &__key {
                     &--del {
-                        font-size: 18px;
+                        font-size: 15px;
                     }
     
                     &--reset {
-                        font-size: 18px;
+                        font-size: 15px;
                     }
                 }
             }
@@ -213,7 +253,7 @@ body {
 
 @media (max-width: 400px) {
     * {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .container {    
@@ -223,8 +263,12 @@ body {
 
             &-header {
                 &__title {
-                    font-size: 28px;
+                    font-size: 24px;
                 }
+            }
+
+            &-screen {
+                max-width: 300px;
             }
 
             &-keypad {
@@ -232,11 +276,11 @@ body {
 
                 &__key {
                     &--del {
-                        font-size: 14px;
+                        font-size: 12px;
                     }
     
                     &--reset {
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                 }
             }
