@@ -473,15 +473,12 @@ body {
     padding: 1rem 3rem;
     font-size: 1.25rem;
   }
-  .container footer {
-    margin: 1.5rem;
-  }
   .container footer .rules {
     text-align: right;
   }
   .container footer .rules button {
-    font-size: 1.15rem;
-    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .modal {
@@ -507,18 +504,18 @@ body {
 }
 @media screen and (min-width: 1024px) {
   .container main .game-wrapper {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
   }
   .container main .game-wrapper__row:nth-child(1), .container main .game-wrapper__row:nth-child(2) {
     padding-top: 0;
   }
   .container main .game-wrapper__row:nth-child(3) {
-    padding-top: 40px;
+    padding-top: 25px;
   }
   .container main .game-wrapper__btn {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     background-color: white;
     filter: brightness(90%);
