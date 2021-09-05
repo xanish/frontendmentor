@@ -1,0 +1,190 @@
+* {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #23303e;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh repeat(11, auto);
+}
+.grid__banner {
+  grid-column: span 2;
+  background-image: url(../images/desktop/image-header.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.grid__banner .banner-header {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.grid__transform, .grid__stand-out {
+  text-align: center;
+  grid-column: span 2;
+  color: #5a636c;
+  padding: 4rem 2rem;
+}
+.grid__transform p, .grid__stand-out p {
+  margin-bottom: 1rem;
+}
+.grid__transform a, .grid__stand-out a {
+  color: #23303e;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
+}
+.grid__transform a ::after, .grid__stand-out a ::after {
+  content: " ";
+  background-color: red;
+}
+.grid__transform-picture {
+  grid-column: span 2;
+}
+.grid__stand-out-picture {
+  grid-column: span 2;
+}
+.grid__graphic {
+  background-image: url(../images/desktop/image-graphic-design.jpg);
+  color: #25564b;
+}
+.grid__graphic h3 {
+  color: #25564b;
+}
+.grid__photography {
+  background-image: url(../images/desktop/image-photography.jpg);
+  color: #23303e;
+}
+.grid__photography h3 {
+  color: #23303e;
+}
+.grid__graphic, .grid__photography {
+  grid-column: span 2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10rem 2rem 2rem 2rem;
+  text-align: center;
+}
+.grid__testimonials {
+  grid-column: span 2;
+  padding: 2rem;
+}
+.grid__testimonials .testimonials__header {
+  text-align: center;
+  text-transform: uppercase;
+  color: #a7abae;
+  font-size: 1.15rem;
+  letter-spacing: 0.2rem;
+  margin: 2rem 0 4rem 0;
+}
+.grid__testimonials .testimonials__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.grid__testimonials .testimonials__wrapper .testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.grid__testimonials .testimonials__wrapper .testimonial__img {
+  border-radius: 100%;
+  width: 100px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.grid__testimonials .testimonials__wrapper .testimonial__body {
+  color: #5a636c;
+  margin-bottom: 1.5rem;
+}
+.grid__testimonials .testimonials__wrapper .testimonial__author {
+  list-style-type: none;
+}
+.grid__testimonials .testimonials__wrapper .testimonial__author li:first-child {
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
+  color: #23303e;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.grid__testimonials .testimonials__wrapper .testimonial__author li:last-child {
+  color: #a7abae;
+  font-size: 0.9rem;
+}
+
+.footer {
+  background-color: #458c7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer__logo {
+  margin-top: 4rem;
+}
+.footer__nav {
+  list-style-type: none;
+  margin-bottom: 4rem;
+}
+.footer__nav li {
+  display: inline;
+  margin: 1rem;
+}
+.footer__nav li a {
+  color: #25564b;
+  text-decoration: none;
+}
+.footer__socials {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+.footer__socials li {
+  display: inline;
+  margin: 1rem;
+  color: #25564b;
+}
+.footer__attribution {
+  font-size: 0.7rem;
+  color: #25564b;
+  margin: 1rem;
+}
+.footer__attribution a {
+  font-size: 0.7rem;
+  color: #25564b;
+}
+.footer__attribution a:hover {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
